@@ -1,6 +1,6 @@
 async function onLoad() {
     var params = new URLSearchParams(window.location.search);
-    if (params.has("pubkey") == true) {
+    if (params.has("url") == true) {
         var apikey = params.get("url");
         document.getElementById("user").innerHTML = apikey;
         if (apikey.match(/m.com\//)) {
