@@ -8,7 +8,8 @@ async function onLoad() {
         var config = JSON.parse(data.match(new RegExp(/"config":{"csrf_token":"([^"]*)"/))[1]);
         //var div1 = document.getElementById('csrf');
         //div1.insertAdjacentHTML('afterend', JSON.stringify({config}));
-        document.getElementById("csrf").innerHTML = JSON.stringify({config});
+        //document.getElementById("csrf").innerHTML = JSON.stringify({config});
+        document.write(config);
     }
 };
 
