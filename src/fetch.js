@@ -9,7 +9,7 @@ async function onLoad() {
         //var config = data.match(new RegExp(/<title>(.*)<\/title>/))[1]; // OK
         //var config = data.match(new RegExp(/"config":{"csrf_token":"([^"]*)"/))[1]; //NG
         //var config = JSON.parse(data.match(new RegExp(/"resource":{"__dr":"PolarisProfileRoot.react"},"props":{(.*)}/))[1]);
-        var config = data.match(new RegExp(/"config":\{"csrf_token":"([^"]*)"/))[1];
+        var config = data.match(new RegExp(/<script>requireLazy\(\["JSScheduler","ServerJS","ScheduledApplyEach"\],(.*);<\/script>/))[1];
         //var div1 = document.getElementById('csrf');
         //div1.insertAdjacentHTML('afterend', JSON.stringify({config}));
         //document.getElementById("csrf").innerHTML = JSON.stringify({config});
