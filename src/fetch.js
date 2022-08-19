@@ -6,11 +6,12 @@ async function onLoad() {
         var res = await fetch(url);
         var data = await res.text();
         //var config = JSON.parse(data.match(new RegExp(/<title>(.*)<\/title>/))[1]);
-        var config = JSON.parse(data.match(new RegExp(/<title>(.*)<\/title>/))[1]);
+        var config = data.match(new RegExp(/<title>(.*)<\/title>/))[1];
         //var div1 = document.getElementById('csrf');
         //div1.insertAdjacentHTML('afterend', JSON.stringify({config}));
         //document.getElementById("csrf").innerHTML = JSON.stringify({config});
-        document.write(JSON.stringify({config}));
+        //document.write(JSON.stringify({config}));
+        document.write(config);
     }
 };
 
