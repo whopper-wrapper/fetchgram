@@ -5,16 +5,20 @@ async function onLoad() {
         var url = `https://images${~~(Math.random() * 3333)}-focus-opensocial.googleusercontent.com/gadgets/proxy?container=none&url=${encodeURI(`https://www.instagram.com/${username}/`)}`
         var res = await fetch(url);
         var data = await res.text();
+        
         //var config = JSON.parse(data.match(new RegExp(/<title>(.*)<\/title>/))[1]);
         //var config = data.match(new RegExp(/<title>(.*)<\/title>/))[1]; // OK
         //var config = data.match(new RegExp(/"config":{"csrf_token":"([^"]*)"/))[1]; //NG
         //var config = JSON.parse(data.match(new RegExp(/"resource":{"__dr":"PolarisProfileRoot.react"},"props":{(.*)}/))[1]);
-        var config = data.match(new RegExp(/<script>requireLazy\(\["JSScheduler","ServerJS","ScheduledApplyEach"\],(.*);<\/script>/))[1];
+        //var config = data.match(new RegExp(/<script>requireLazy\(\["JSScheduler","ServerJS","ScheduledApplyEach"\],(.*)\);\}\);\}\);<\/script>/))[1].ProfilePage[0];
+        
+        var config = JSON.parse(data.match(new RegExp(/<script>requireLazy\(\["JSScheduler","ServerJS","ScheduledApplyEach"\],(.*)\);\}\);\}\);<\/script>/))[1]).define[0];
+        
         //var div1 = document.getElementById('csrf');
         //div1.insertAdjacentHTML('afterend', JSON.stringify({config}));
         //document.getElementById("csrf").innerHTML = JSON.stringify({config});
         //document.write(JSON.stringify({config}));
-        document.write(config);
+        document.write(JSON.stringify({config}));
     }
 };
 
