@@ -7,9 +7,11 @@ async function onLoad() {
             method: "GET",
             mode: "cors",
             redirect: "follow",
-            credentials: 'same-origin',
-            /*headers: {
+            redirect: "follow",
+            credentials: 'include',
+            headers: {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36',
+                'Origin': 'https://www.instagram.com',
                 'X-IG-App-ID': '936619743392459',
                 'X-CSRFToken': '8qvOUfPxpbVxdvN2fGngRbmH9XCpz01k',
                 'Cookie': 'csrftoken=8qvOUfPxpbVxdvN2fGngRbmH9XCpz01k',
