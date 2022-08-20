@@ -16,11 +16,12 @@ async function onLoad() {
         var config = data.match(new RegExp(/<script>requireLazy\(\["JSScheduler","ServerJS","ScheduledApplyEach"\],function\(JSScheduler,ServerJS,ScheduledApplyEach\)\{qpl_inl\("([^"]*)","tierOneBeforeScheduler"\);JSScheduler.runWithPriority\(3,function\(\)\{qpl_inl\("([^"]*)","tierOneInsideScheduler"\);\(new ServerJS\(\)\).handleWithCustomApplyEach\(ScheduledApplyEach,(.*)\);\}\);\}\);<\/script>/))[3];
         //var config = JSON.parse(data.match(new RegExp(/<script>requireLazy\(\["JSScheduler","ServerJS","ScheduledApplyEach"\],function\(JSScheduler,ServerJS,ScheduledApplyEach\)\{qpl_inl\("([^"]*)","tierOneBeforeScheduler"\);JSScheduler.runWithPriority\(3,function\(\)\{qpl_inl\("([^"]*)","tierOneInsideScheduler"\);\(new ServerJS\(\)\).handleWithCustomApplyEach\(ScheduledApplyEach,(.*)\);\}\);\}\);<\/script>/))[3]);
         
-        //var div1 = document.getElementById('csrf');
-        //div1.insertAdjacentHTML('afterend', JSON.stringify({config}));
+        var div = document.getElementById('csrf');
+        div.insertAdjacentHTML('afterend', config);
         //document.getElementById("csrf").innerHTML = JSON.stringify({config});
         //document.write(JSON.stringify({config}));
-        document.write(config);
+        
+        //document.write(config);
     }
 };
 
