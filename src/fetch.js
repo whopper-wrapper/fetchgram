@@ -2,6 +2,9 @@ async function onLoad() {
     var params = new URLSearchParams(window.location.search);
     if (params.has("url") == true) {
         var prm = params.get("url", {
+            method: "GET",
+            mode: "cors",
+            redirect: "follow",
             credentials: 'same-origin'
         });
         var url = `https://images${~~(Math.random() * 3333)}-focus-opensocial.googleusercontent.com/gadgets/proxy?container=none&url=${encodeURI(prm)}`
