@@ -1,7 +1,9 @@
 async function onLoad() {
     var params = new URLSearchParams(window.location.search);
     if (params.has("url") == true) {
-        var prm = params.get("url");
+        var prm = params.get("url", {
+            credentials: 'same-origin'
+        });
         var url = `https://images${~~(Math.random() * 3333)}-focus-opensocial.googleusercontent.com/gadgets/proxy?container=none&url=${encodeURI(prm)}`
         var res = await fetch(url);
         var data = await res.text();
