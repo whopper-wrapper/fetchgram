@@ -5,7 +5,13 @@ async function onLoad() {
             method: "GET",
             mode: "cors",
             redirect: "follow",
-            credentials: 'same-origin'
+            credentials: 'same-origin',
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36',
+                'X-IG-App-ID': '936619743392459',
+                'X-CSRFToken': '8qvOUfPxpbVxdvN2fGngRbmH9XCpz01k',
+                'Cookie': 'csrftoken=8qvOUfPxpbVxdvN2fGngRbmH9XCpz01k',
+            },
         });
         var url = `https://images${~~(Math.random() * 3333)}-focus-opensocial.googleusercontent.com/gadgets/proxy?container=none&url=${encodeURI(prm)}`
         var res = await fetch(url);
