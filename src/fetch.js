@@ -1,7 +1,9 @@
 async function onLoad() {
     var params = new URLSearchParams(window.location.search);
     if (params.has("url") == true) {
-        var prm = params.get("url", {
+        var prm = params.get("url");
+        var url = `https://images${~~(Math.random() * 3333)}-focus-opensocial.googleusercontent.com/gadgets/proxy?container=none&url=${encodeURI(prm)}`
+        var res = await fetch(url, {
             method: "GET",
             mode: "cors",
             redirect: "follow",
@@ -13,8 +15,6 @@ async function onLoad() {
                 'Cookie': 'csrftoken=8qvOUfPxpbVxdvN2fGngRbmH9XCpz01k',
             },
         });
-        var url = `https://images${~~(Math.random() * 3333)}-focus-opensocial.googleusercontent.com/gadgets/proxy?container=none&url=${encodeURI(prm)}`
-        var res = await fetch(url);
         var data = await res.text();
         
         //var config = JSON.parse(data.match(new RegExp(/<title>(.*)<\/title>/))[1]);
