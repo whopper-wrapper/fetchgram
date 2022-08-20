@@ -6,7 +6,7 @@ async function onLoad() {
         var res = await fetch(url);
         var data = await res.text();
         var json = data.match(new RegExp(/<script>requireLazy\(\["JSScheduler","ServerJS","ScheduledApplyEach"\],function\(JSScheduler,ServerJS,ScheduledApplyEach\)\{qpl_inl\("([^"]*)","tierOneBeforeScheduler"\);JSScheduler.runWithPriority\(3,function\(\)\{qpl_inl\("([^"]*)","tierOneInsideScheduler"\);\(new ServerJS\(\)\).handleWithCustomApplyEach\(ScheduledApplyEach,(.*)\);\}\);\}\);<\/script>/))[3];
-        document.getElementById("csrf").innerText = json;
+        document.getElementById("token").innerText = json;
     }
 };
 
