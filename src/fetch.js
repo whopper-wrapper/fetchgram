@@ -8,7 +8,7 @@ async function onLoad() {
             mode: 'cors',
             redirect: 'follow',
             //credentials: 'same-origin',
-            credentials: 'include',
+            //credentials: 'include',
             /*headers: {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36',
                 'Origin': 'https://www.instagram.com',
