@@ -4,9 +4,9 @@ async function onLoad() {
         var prm = params.get("url");
         var url = `https://images${~~(Math.random() * 3333)}-focus-opensocial.googleusercontent.com/gadgets/proxy?container=none&url=${encodeURI(prm)}`
         var res = await fetch(url, {
-            method: "GET",
-            mode: "cors",
-            redirect: "follow",
+            method: 'GET',
+            mode: 'cors',
+            redirect: 'follow',
             //credentials: 'same-origin',
             credentials: 'include',
             /*headers: {
